@@ -24,6 +24,13 @@ def getDistributionType(type):
   return listOfDistributions[type]
 
 
+def getMoments(nom,bias,cov):
+    """Get mean and standard deviation from nominal and probability model.
+    Tuple order is mean and standard deviation"""
+    mu = bias*nom
+    sd = cov*mu
+    return mu,sd   
+
 class Distribution(object):
   """Probability distribution
 
